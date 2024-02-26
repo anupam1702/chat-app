@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 import authRoutes from "./router/authRoutes.js"
 import userRoutes from "./router/userRoutes.js"
 
-import connectToMongoDb from "./db/connectToMongodb.js";
+import connectToMongodb from "./db/connectToMongodb.js";  
 import messageRoutes from "./router/messageRoutes.js"
 import {app, server} from './socket/socket.js'
 // const app=express();
@@ -34,6 +34,6 @@ app.get("*",(req,res)=>{
 })
 
 server.listen(PORT,()=>{
-    connectToMongoDb();
+    connectToMongodb();
     console.log(`app is running on port ${PORT}`);
 })

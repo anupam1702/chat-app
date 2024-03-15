@@ -14,20 +14,16 @@ const useLogout = () => {
 			
 			const res = await fetch("/api/auth/logout", {
 				method: "POST",
-				headers: { "Content-Type": "application/json" },
+				headers: { "Content-Type": "application/json" ,
+				"Access-Control-Allow-Origin": "*"},
 			});
 			const data = await res.json();
 			console.log(data);
-			if (data.error&& data.error !== 'Logged Out Successfully') {
-				
-				throw new Error(data.error);
-			}
 			
-			// console.log("try ke ander middle");
 			localStorage.removeItem('chat-user')
-			// console.log("try ke ander niche");
+			
 			setAuthUser(null);
-			// console.log("try ke ander niche2");
+			
 			
 		} catch (error) {
 			toast.error(error.message);

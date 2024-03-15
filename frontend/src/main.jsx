@@ -7,7 +7,7 @@ import { AuthContextProvider } from './context/AuthContext.jsx'
 import { SocketContextProvider } from './context/SocketContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-   // <React.StrictMode>
+ <React.StrictMode>
     <BrowserRouter>
     <AuthContextProvider>
       <SocketContextProvider>
@@ -16,5 +16,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </AuthContextProvider>
    
     </BrowserRouter>
-   // </React.StrictMode>
+    </React.StrictMode>
 )

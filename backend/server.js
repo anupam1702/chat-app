@@ -9,8 +9,10 @@ import connectToMongoDb from "./db/connectToMongoDb.js";
 import messageRoutes from "./router/messageRoutes.js"
 import {app, server} from './socket/socket.js'
 // const app=express();
+import job from "../cron/cron.js";
 
 
+job.start();
 dotenv.config();
 const PORT=process.env.PORT || 5000
 
